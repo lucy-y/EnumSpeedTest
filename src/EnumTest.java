@@ -8,17 +8,21 @@ public class EnumTest {
         int endNum = 1000000;
         // 속도측정
         speedFor(endNum);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
+
         speedArrayStream(endNum);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
+
         speedStream(endNum);
-        Thread.sleep(3000);
+        Thread.sleep(5000);
+
         speedHashMap(endNum);
 
     }
 
     // for
     public static void speedFor(int endNum) {
+        System.err.println("=== For ===");
         long startTime = System.currentTimeMillis();
         int i = 0;
         while(i<endNum){
@@ -26,11 +30,11 @@ public class EnumTest {
             i++;
         }
         long estimatedTime = System.currentTimeMillis() - startTime;
-        System.err.println("=== For ===");
         System.out.println("took " + estimatedTime + " ms");
     }
     //Arrays.stream
     public static void speedArrayStream(int endNum){
+        System.err.println("=== Arrays.stream ===");
         long startTime = System.currentTimeMillis();
         int i = 0;
         while(i<endNum){
@@ -38,11 +42,11 @@ public class EnumTest {
             i++;
         }
         long estimatedTime = System.currentTimeMillis() - startTime;
-        System.err.println("=== Arrays.stream ===");
         System.out.println("took " + estimatedTime + " ms");
     }
     //Stream.of
     public static void speedStream(int endNum){
+        System.err.println("=== Stream.of ===");
         long startTime = System.currentTimeMillis();
         int i = 0;
         while(i<endNum){
@@ -50,11 +54,11 @@ public class EnumTest {
             i++;
         }
         long estimatedTime = System.currentTimeMillis() - startTime;
-        System.err.println("=== Stream.of ===");
         System.out.println("took " + estimatedTime + " ms");
     }
     //HashMap
     public static void speedHashMap(int endNum) {
+        System.err.println("=== HashMap ===");
         long startTime = System.currentTimeMillis();
         int i = 0;
         while(i<endNum){
@@ -62,7 +66,6 @@ public class EnumTest {
             i++;
         }
         long estimatedTime = System.currentTimeMillis() - startTime;
-        System.err.println("=== HashMap ===");
         System.out.println("took " + estimatedTime + " ms");
     }
 }
